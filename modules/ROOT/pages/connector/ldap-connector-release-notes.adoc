@@ -1,122 +1,148 @@
 = LDAP Connector Release Notes
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
 :keywords: release notes, ldap, active directory, connector
 
-*November 2017*
+Lightweight Directory Access Protocol (LDAP) is an Internet protocol used to access information from a server. The LDAP connector allows Mule applications to interact with LDAP servers.
 
-_Select_
+*Guide*: link:/mule-user-guide/v/3.8/ldap-connector[LDAP Connector]
 
-The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network. The LDAP connector allows Mule applications to interact with LDAP servers.
+== Version 2.2.2 - November 9, 2018
 
-Guide: xref:3.9@mule-runtime::ldap-connector.adoc[LDAP Connector] +
-Reference: https://mulesoft.github.io/mule-ldap-connector/[Mule LDAP Connector]
+Release notes for version 2.2.2 of the LDAP connector.
 
-== 2.2.1 
-
-*November 2, 2018*
-
-=== Compatibility
+=== Version 2.2.2 Compatibility
 
 The LDAP Connector is compatible with:
 
-[%header%autowidth.spread]
+[%header%autowidth]
 |===
 |Application/Serice|Version
-|Mule Runtime|3.5.0 or later
-|Java|1.7 or 1.8
+|Mule Runtime|3.5.0 or higher
+|Java|1.7 or higher
 |===
 
-=== Fixed in this Release
+=== Version 2.2.2 Features
 
-* Log levels changed for operations that manipulate with attributes.
-* Value of an attribute shown in the logs is masked when the attribute name is "password".
+No new features.
 
-== 2.2.0
+=== Version 2.2.1 Fixed in this Release
 
-*January 5, 2018*
+* Fixed issue regarding transformation of LDAPEntry to string which was causing java.lang.ArrayIndexOutOfBoundsException.
+
+=== Version 2.2.1 Known Issues
+
+None.
+
+== Version 2.2.1 - October 10, 2018
+
+Release notes for version 2.2.1 of the LDAP connector.
+
+=== Version 2.2.1 Compatibility
+
+The LDAP Connector is compatible with:
+
+[%header%autowidth]
+|===
+|Application/Serice|Version
+|Mule Runtime|3.5.0 or higher
+|Java|1.7 or higher
+|===
+
+=== Version 2.2.1 Features
+
+No new features.
+
+=== Version 2.2.1 Fixed in this Release
+
+* Log levels changed for operations which manipulate with attributes.
+* Value of attribute shown in logs is masked when attribute name is "password".
+
+=== Version 2.2.1 Known Issues
+
+None.
+
+
+== Version 2.2.0 - January 4, 2018
 
 Release notes for version 2.2.0 of the LDAP connector.
 
-=== Compatibility
+=== Version 2.2.0 Compatibility
 
 The LDAP Connector is compatible with:
 
-[%header%autowidth.spread]
+[%header%autowidth]
 |===
 |Application/Serice|Version
-|Mule Runtime|3.5.0 and later
-|Java|1.7 or 1.8
+|Mule Runtime|3.5.0 or higher
+|Java|1.7 or higher
 |===
 
-=== Features
+=== Version 2.2.0 Features
 
 * Custom truststore - Custom truststore is supported now, this allows to specify which servers the connector is allowed to communicate with using TLS Config.
 
-=== Observations
+=== Version 2.2.0 Observations
 
 * Active Directory demo - A demo to use active directory from the ldap connector has been added.
 
-=== Fixed in this Release
+=== Version 2.2.0 Fixed in this Release
 
 * Pool properties support - In the previous versions initialPoolSize, maxPoolSize and poolTimeout were ineffective. Now, with an implementation of a custom pool, these properties are supported.
 * AD range retrieval with schema enabled - When a lookup is done for retriving ranges in AD with schema enabled as true a LDAPJNDIConnection exception was thrown. This has been fixed and exception is not thrown now.
 
-=== Known Issues
+=== Version 2.2.0 Known Issues
 
 None.
 
-== 2.1.0
-
-*October 13, 2016*
+== Version 2.1.0 - October 13, 2016
 
 Release notes for version 2.1.0 of the LDAP connector.
 
-=== Compatibility
+=== Version 2.1.0 Compatibility
 
 The LDAP Connector is compatible with:
 
-[%header%autowidth.spread]
+[%header%autowidth]
 |===
 |Application/Serice|Version
-|Mule Runtime|3.5.0 and later
-|Java|1.7 and later
+|Mule Runtime|3.5.0 or higher
+|Java|1.7 or higher
 |===
 
-=== Features
+=== Version 2.1.0 Features
 
 * Bind Operation now accepts authDN, authPassword and authentication.
 
-=== Fixed in this Release
+=== Version 2.1.0 Fixed in this Release
 
 * Fixed TLS connection to use the correct context on which TLS is initialised, now TLS can be used to set password for Active Directory.
 * LDAP Entry allows DN to be obtained by getting attribute dn. Get call on LDAPEntry for DN returns the distinguished name.
 * LDAP Entry allows having null attribute value. Get call on LDAPEntry for a null valued attribute returns null instead of throwing a null pointer exception.
 
-=== Known Issues
+=== Version 2.1.0 Known Issues
 
 None.
 
-== 2.0.1
-
-*April 8, 2016*
+== Version 2.0.1 - April 8, 2016
 
 Release notes for version 2.0.1 of the LDAP connector.
 
-=== Compatibility
+== Version 2.0.1 - April 8, 2016
+
+Release notes for version 2.0.1 of the LDAP connector.
+
+=== Version 2.0.1 Compatibility
 
 The LDAP Connector is compatible with:
 
-[%header%autowidth.spread]
+[%header%autowidth]
 |===
 |Application/Service|Version
-|Mule Runtime|3.6.x and later
+|Mule Runtime|3.6.x or higher
 |Java|1.7.0_x or higher
-|Anypoint Studio|5.2 and later
+|Anypoint Studio|5.2 or higher
 |===
 
-=== Features
+=== Version 2.0.1 Features
 
 * Upgraded connector for compatibility with Anypoint Connector DevKit v3.8.1
 * The following operations are supported:
@@ -136,15 +162,17 @@ The LDAP Connector is compatible with:
 ** Delete single value attribute - Deletes specific single valued attribute to an existing LDAP entry.
 ** Delete multi-value attribute - Deletes specific multi-valued attribute to an existing LDAP entry.
 
-=== Fixed in this Release
+=== Version 2.0.1 Fixed in this Release
 
 * Deprecated message processors (addFromMap & modifyFromMap) have been sunset and no longer available.
 
-=== Known Issues
+=== Version 2.0.1 Known Issues
 
 None.
 
 == See Also
 
-* https://forums.mulesoft.com[MuleSoft Forum].
-* https://support.mulesoft.com[Contact MuleSoft Support].
+* Learn how to link:/mule-fundamentals/v/3.7/anypoint-exchange[Install Anypoint Connectors] using Anypoint Exchange.
+* Read more about the link:/mule-user-guide/v/3.7/ldap-connector[LDAP Connector], including examples of how to use it
+* Access MuleSoft’s link:http://forum.mulesoft.org/mulesoft[Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team, link:http://www.mulesoft.com/mule-esb-subscription[subscribe] to Mule ESB Enterprise and log in to MuleSoft’s link:http://www.mulesoft.com/support-login[Customer Portal]. 
